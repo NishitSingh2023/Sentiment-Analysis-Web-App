@@ -65,8 +65,7 @@ def train(model, train_loader, epochs, optimizer, loss_fn, device):
     optimizer    - The optimizer to use during training.
     loss_fn      - The loss function used for training.
     device       - Where the model and data should be loaded (gpu or cpu).
-    """
-    
+    """   
     # TODO: Paste the train() method developed in the notebook here.
     for epoch in range(1, epochs + 1):
         model.train()
@@ -83,9 +82,7 @@ def train(model, train_loader, epochs, optimizer, loss_fn, device):
             loss = loss_fn(out, batch_y)
             loss.backward()
             optimizer.step()
-            
             total_loss += loss.data.item()
-            
         print("Epoch: {}, BCELoss: {}".format(epoch, total_loss / len(train_loader)))
 
 
